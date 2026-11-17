@@ -1,0 +1,542 @@
+
+/* =================================
+   1. Global styles and colour palette
+================================= */
+
+:root {
+    --background: #F8F7F3;
+    --navy: #172B4D;
+    --blue: #4776A8;
+    --white: #FFFFFF;
+    --body-text: #39485C;
+    --muted-text: #687386;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--body-text);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    color: var(--navy);
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 4px;
+}
+
+/* Main page width and horizontal spacing */
+.site-shell {
+    width: calc(100% - 80px);
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    padding: 76px 0;
+    scroll-margin-top: 85px;
+}
+
+/* =================================
+   2. Navigation
+================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--background);
+    border-bottom: 1px solid #E5E3DC;
+}
+
+.navbar {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-brand {
+    color: var(--navy);
+    font-family: "DM Serif Display", serif;
+    font-size: 28px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--body-text);
+    font-size: 14px;
+}
+
+.nav-links a:hover,
+.social-links a:hover {
+    color: var(--blue);
+}
+
+/* =================================
+   3. Homepage hero
+================================= */
+
+.hero {
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(240px, 1fr);
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 76px);
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.hero-subtitle {
+    font-family: "DM Sans", sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.hero-description,
+.section-description {
+    max-width: 660px;
+    color: var(--body-text);
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.hero-actions,
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.button {
+    min-height: 46px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 18px;
+    border: 1px solid var(--navy);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.button-primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.button-secondary {
+    color: var(--navy);
+    background: transparent;
+}
+
+.button-secondary:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 22px;
+}
+
+.social-links a {
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =================================
+   4. Focus panel
+================================= */
+
+.focus-panel {
+    min-width: 0;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid #E9E7E0;
+}
+
+.focus-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid #E9E7E0;
+    color: var(--navy);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.focus-item:last-child {
+    border-bottom: none;
+}
+
+.focus-number {
+    color: var(--blue);
+    font-size: 12px;
+}
+
+/* =================================
+   5. Content sections and cards
+================================= */
+
+.content-section {
+    border-top: 1px solid #E5E3DC;
+}
+
+.content-section > h2,
+.contact-section > h2 {
+    font-size: 36px;
+    margin-bottom: 22px;
+}
+
+.content-section > .section-description + .section-description {
+    margin-top: 16px;
+}
+
+.content-card {
+    margin-top: 28px;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid #E9E7E0;
+    min-width: 0;
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.content-card h3,
+.skill-card h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.card-subtitle {
+    color: var(--body-text);
+    font-size: 15px;
+}
+
+.date-label,
+.project-type {
+    color: var(--muted-text);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card-description {
+    margin-top: 16px;
+    max-width: 720px;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.project-type {
+    color: var(--blue);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* =================================
+   6. Skills grid
+================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.skill-card {
+    min-width: 0;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid #E9E7E0;
+}
+
+.skill-card p {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* =================================
+   7. Contact and footer
+================================= */
+
+.contact-section {
+    border-top: 1px solid #E5E3DC;
+    padding: 76px 0;
+}
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px 0;
+    border-top: 1px solid #E5E3DC;
+    color: var(--muted-text);
+    font-size: 13px;
+}
+
+/* =================================
+   8. Paper resume
+================================= */
+
+.resume-paper {
+    width: 100%;
+    min-width: 0;
+    background: var(--white);
+    color: #222222;
+    padding: 44px;
+    margin: 50px 0;
+    border: 1px solid #E5E3DC;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.resume-header {
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--navy);
+}
+
+.resume-header h1 {
+    font-size: 38px;
+}
+
+.resume-tagline {
+    color: var(--body-text);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.resume-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.resume-contact a {
+    color: #222222;
+}
+
+.resume-section {
+    margin-top: 22px;
+}
+
+.resume-section h2 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #BBBBBB;
+}
+
+.resume-section h3 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.resume-section p,
+.resume-section li {
+    font-size: 12px;
+}
+
+.resume-section ul {
+    padding-left: 20px;
+}
+
+/* =================================
+   9. Mobile layout
+================================= */
+
+@media (max-width: 700px) {
+    .site-shell {
+        width: calc(100% - 36px);
+    }
+
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 12px 18px;
+    }
+
+    .hero {
+        min-height: auto;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .content-section > h2,
+    .contact-section > h2 {
+        font-size: 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card-heading {
+        flex-direction: column;
+    }
+
+    .content-card,
+    .skill-card {
+        padding: 22px;
+    }
+
+    .resume-paper {
+        padding: 24px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+    }
+}
+
+/* =================================
+   10. Print layout — A4 resume only
+================================= */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    body {
+        background: #FFFFFF;
+        color: #000000;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    #resume,
+    #resume * {
+        visibility: visible;
+    }
+
+    #resume {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: #FFFFFF;
+        color: #000000;
+        font-size: 10pt;
+    }
+
+    #resume h1,
+    #resume h2,
+    #resume h3,
+    #resume p,
+    #resume li,
+    #resume a {
+        color: #000000;
+    }
+
+    #resume h1 {
+        font-size: 25pt;
+    }
+
+    #resume .resume-section {
+        margin-top: 15px;
+    }
+
+    #resume .resume-section h2 {
+        font-size: 11pt;
+    }
+
+    #resume .resume-section p,
+    #resume .resume-section li {
+        font-size: 9pt;
+    }
+
+    #resume a {
+        text-decoration: none;
+    }
+}
